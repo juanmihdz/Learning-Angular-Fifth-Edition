@@ -9,9 +9,9 @@ import { Product } from '../product';
 })
 export class ProductDetailComponent {
   product = input<Product>();
-  added = output();
+  added = output<string>();
 
   addToCart() {
-    this.added.emit();
+    this.added.emit('Product added to cart: ' + this.product()?.title);
   }
 }
