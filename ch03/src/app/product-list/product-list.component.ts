@@ -15,10 +15,9 @@ export class ProductListComponent {
     { id: 3, title: 'Web camera' },
     { id: 4, title: 'Tablet' }
   ];
-  selectedProduct: Product | undefined;
+  selectedProduct: Product | undefined = this.products[0];
 
   onAdded(s:string) {
-    console.log(s);
-    alert(`${this.selectedProduct?.title} added to the cart!`);
+    alert(s);
   }
 }
