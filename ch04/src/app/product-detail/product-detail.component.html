@@ -7,6 +7,6 @@
     @for (cat of product()!.categories | keyvalue; track cat.key) {
       <p class="pill">{{cat.value | lowercase}}</p>
     }
-  </div>  
+  </div>
   <button (click)="addToCart()">Add to cart</button>
 }

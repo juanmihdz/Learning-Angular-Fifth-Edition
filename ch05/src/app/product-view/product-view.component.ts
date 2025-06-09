@@ -1,4 +1,4 @@
-import { Component, input, OnInit } from '@angular/core';
+import { Component, inject, input, OnInit } from '@angular/core';
 import { ProductViewService } from './product-view.service';
 import { Product } from '../product';
 
@@ -7,13 +7,15 @@ import { Product } from '../product';
   imports: [],
   templateUrl: './product-view.component.html',
   styleUrl: './product-view.component.css',
-  providers: [ProductViewService]
+  providers: []
 })
 export class ProductViewComponent implements OnInit {
   id = input<number>();
   product: Product | undefined;
+
+  private productViewService= inject(ProductViewService);
   
-  constructor(private productViewService: ProductViewService) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.product = this.productViewService.getProduct(this.id()!);

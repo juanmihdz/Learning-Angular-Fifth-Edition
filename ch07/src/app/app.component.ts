@@ -3,7 +3,8 @@ import {
   inject,
   Signal,
   computed,
-  signal
+  signal,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -22,7 +23,8 @@ import { Observable } from 'rxjs';
   styleUrl: './app.component.css',
   providers: [
     { provide: APP_SETTINGS, useValue: appSettings }
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title: Signal<string> = signal('');
